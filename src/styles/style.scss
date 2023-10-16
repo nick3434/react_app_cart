@@ -1,0 +1,60 @@
+$card-shadow: #2721272c;
+
+.page-container {
+    animation: fade-in 0.5s ease-out;
+
+    &.page-exit {
+        animation: slide-out 0.5s ease-in-out;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.card,
+.card-img-top {
+    transition: all .3s ease-out;
+}
+
+.card {
+    box-shadow: 0 3px 2px $card-shadow;
+
+    .card-img-top {
+        filter: grayscale(100%) brightness(1.1);
+    }
+
+    &:hover {
+        box-shadow: 0 20px 15px $card-shadow, 0 5px 10px -3px $card-shadow;
+
+        .card-img-top {
+            filter: grayscale(0%) brightness(1);
+        }
+    }
+}
